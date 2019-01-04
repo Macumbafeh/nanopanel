@@ -455,7 +455,9 @@
 		local function OnUpdate()
 			time = GetTime()
 			if time > nextUpdate then
-				GuildRoster()
+				if IsInGuild() then
+					GuildRoster()
+				end
 				nextUpdate = time + 60
 			end
 		end
